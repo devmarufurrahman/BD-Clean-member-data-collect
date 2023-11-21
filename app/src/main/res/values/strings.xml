@@ -434,4 +434,5 @@
     <string name="passing_year">Passing Year</string>
     <string name="registration_no_roll_no">Registration No./Roll No.</string>
     <string name="result">Result</string>
+    <string name="facebook_id">Facebook ID</string>
 </resources>
