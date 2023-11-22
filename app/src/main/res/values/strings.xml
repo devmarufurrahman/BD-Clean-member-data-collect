@@ -12,7 +12,7 @@
     <string name="email">Email</string>
     <string name="date_of_birth">Date of Birth</string>
     <string name="choose_gender">Gender</string>
-    <string name="present_address">Present Address: \n House No, \n Street Address, \n Post Office, \n Zip Code</string>
+    <string name="present_address"> House No, \n Street Address, \n Post Office, \n Zip Code</string>
     <string name="nid_birth_certificate_passport_number">Nid/Birth Certificate</string>
     <string name="father_s_name">Father\'s name</string>
     <string name="father_contact">Father contact</string>
@@ -435,4 +435,5 @@
     <string name="registration_no_roll_no">Registration No./Roll No.</string>
     <string name="result">Result</string>
     <string name="facebook_id">Facebook ID</string>
+    <string name="all_field_are_required">All field are required!!</string>
 </resources>
