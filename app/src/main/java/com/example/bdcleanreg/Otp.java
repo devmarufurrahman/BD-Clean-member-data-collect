@@ -22,7 +22,7 @@ public class Otp extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Otp.this, FormDetails.class);
+                Intent i = new Intent(Otp.this, DesignationSelect.class);
                 startActivity(i);
                 finish();
             }

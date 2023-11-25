@@ -14,4 +14,5 @@
     <color name="bdclean_greenDark">#037833</color>
     <color name="bdclean_green">#009748</color>
     <color name="text_color">#676767</color>
+    <color name="hint_color">#C0BFBF</color>
 </resources>
