@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,6 +17,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <TextView
+        android:id="@+id/tv_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/all_field_are_required"
@@ -25,11 +26,12 @@
         android:gravity="center"
         android:fontFamily="@font/bdclean"
         android:textColor="@color/white"
-        />
+        android:layout_below="@+id/custom_toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/tv_1"
         android:layout_marginBottom="105dp"
         >
 
@@ -150,7 +152,41 @@
                     android:layout_width="200dp"
                     android:background="@null"
                     android:text="@string/choose_gender"
+                    android:textAllCaps="false"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:drawableEnd="@drawable/icon_dropdown"
+                    android:paddingHorizontal="20dp"
+                    android:layout_height="35dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:paddingHorizontal="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="@string/choose_occupation"
+                    android:textSize="14sp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/bdclean"
+                    android:textColor="@color/text_color"/>
+
+                <Button
+                    android:id="@+id/select_occupation"
+                    android:layout_width="200dp"
+                    android:background="@null"
+                    android:text="@string/occupation"
+                    android:layout_alignParentEnd="true"
+                    android:textAllCaps="false"
                     android:layout_centerVertical="true"
                     android:drawableEnd="@drawable/icon_dropdown"
                     android:paddingHorizontal="20dp"
@@ -199,112 +235,6 @@
                 android:textColorHint="@color/hint_color"
                 android:paddingHorizontal="15dp"
                 android:inputType="number"/>
-
-
-            <EditText
-                android:id="@+id/father_name"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="15dp"
-                android:hint="@string/father_s_name"
-                android:textSize="14sp"
-                android:fontFamily="@font/bdclean"
-                android:textColorHint="@color/hint_color"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:inputType="textPersonName"/>
-
-            <EditText
-                android:id="@+id/father_contact"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="15dp"
-                android:hint="@string/father_contact"
-                android:textColorHint="@color/hint_color"
-                android:textSize="14sp"
-                android:fontFamily="@font/bdclean"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:inputType="phone"/>
-
-            <EditText
-                android:id="@+id/father_occupation"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="15dp"
-                android:hint="Father's Occupation"
-                android:textColorHint="@color/hint_color"
-                android:textSize="14sp"
-                android:fontFamily="@font/bdclean"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:inputType="text"/>
-
-            <EditText
-                android:id="@+id/mother_name"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="15dp"
-                android:hint="Mother's Name"
-                android:textSize="14sp"
-                android:fontFamily="@font/bdclean"
-                android:background="@drawable/edittext_background"
-                android:textColorHint="@color/hint_color"
-                android:layout_marginTop="15dp"
-                android:inputType="textPersonName"/>
-
-
-            <EditText
-                android:id="@+id/mother_contact"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="15dp"
-                android:textColorHint="@color/hint_color"
-                android:hint="Mother's Contact Number"
-                android:textSize="14sp"
-                android:fontFamily="@font/bdclean"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:inputType="phone"/>
-
-            <EditText
-                android:id="@+id/mother_occupation"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="15dp"
-                android:hint="@string/mother_s_occupation"
-                android:textSize="14sp"
-                android:fontFamily="@font/bdclean"
-                android:textColorHint="@color/hint_color"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:inputType="text"/>
-
-            <EditText
-                android:id="@+id/number_of_brothers"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="15dp"
-                android:textColorHint="@color/hint_color"
-                android:hint="@string/total_number_of_brothers"
-                android:textSize="14sp"
-                android:fontFamily="@font/bdclean"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:inputType="phone"/>
-
-            <EditText
-                android:id="@+id/number_of_sister"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingHorizontal="15dp"
-                android:textColorHint="@color/hint_color"
-                android:hint="@string/total_number_of_sisters"
-                android:textSize="14sp"
-                android:fontFamily="@font/bdclean"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:inputType="phone"/>
 
             <RelativeLayout
                 android:id="@+id/ll_1"
@@ -430,149 +360,37 @@
 
             </RelativeLayout>
 
-
-            <LinearLayout
-                android:id="@+id/ll_6"
-                
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="5dp"
+                android:paddingHorizontal="15dp"
                 android:background="@drawable/edittext_background"
-                android:layout_below="@+id/card_1"
-                android:padding="4dp"
-                android:weightSum="2">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/choose_monitor"
-                    android:textStyle="bold"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_gravity="center"
-                    android:textSize="12sp"
-                    android:textAllCaps="true"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="@string/t_shirt_size"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/bdclean"
+                    android:textColor="@color/text_color"/>
 
                 <Button
-                    android:id="@+id/division_spinner"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="40dp"
+                    android:id="@+id/select_shirt_size"
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
                     android:background="@null"
-                    android:text="select"
-                    android:textStyle="normal"
-                    android:textSize="12sp"
+                    android:text="@string/size"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
                     android:drawableEnd="@drawable/icon_dropdown"
                     android:paddingHorizontal="20dp"/>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_5"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/edittext_background"
-                android:padding="4dp"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="District / metropolitan"
-                    android:textStyle="bold"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_gravity="center"
-                    android:textSize="12sp"
-                    android:textAllCaps="true"
-                    android:layout_height="wrap_content"/>
-
-                <Button
-                    android:id="@+id/district_spinner"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="40dp"
-                    android:background="@null"
-                    android:text="select"
-                    android:textStyle="normal"
-                    android:textSize="12sp"
-                    android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_3"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:padding="4dp"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="Upazilla / city corporation"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="10dp"
-                    android:textSize="12sp"
-                    android:textAllCaps="true"
-                    android:layout_height="wrap_content"/>
-
-                <Button
-                    android:id="@+id/upazilla_spinner"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="40dp"
-                    android:background="@null"
-                    android:text="select"
-                    android:textStyle="normal"
-                    android:textSize="12sp"
-                    android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_4"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="15dp"
-                android:padding="4dp"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="Union / ward"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="10dp"
-                    android:textSize="12sp"
-                    android:textAllCaps="true"
-                    android:layout_height="wrap_content"/>
-
-                <Button
-                    android:id="@+id/union_spinner"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="40dp"
-                    android:background="@null"
-                    android:text="select"
-                    android:textStyle="normal"
-                    android:textSize="12sp"
-                    android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"/>
-
-            </LinearLayout>
+            </RelativeLayout>
 
             <EditText
                 android:id="@+id/highest_education"
@@ -680,37 +498,111 @@
                 android:inputType="text"/>
 
 
-            <RelativeLayout
+
+            <EditText
+                android:id="@+id/father_name"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="15dp"
                 android:paddingHorizontal="15dp"
+                android:hint="@string/father_s_name"
+                android:textSize="14sp"
+                android:fontFamily="@font/bdclean"
+                android:textColorHint="@color/hint_color"
                 android:background="@drawable/edittext_background"
-                android:orientation="horizontal">
+                android:layout_marginTop="15dp"
+                android:inputType="textPersonName"/>
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:text="@string/t_shirt_size"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentStart="true"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/bdclean"
-                    android:textColor="@color/text_color"/>
+            <EditText
+                android:id="@+id/father_contact"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="15dp"
+                android:hint="@string/father_contact"
+                android:textColorHint="@color/hint_color"
+                android:textSize="14sp"
+                android:fontFamily="@font/bdclean"
+                android:background="@drawable/edittext_background"
+                android:layout_marginTop="15dp"
+                android:inputType="phone"/>
 
-                <Button
-                    android:id="@+id/select_shirt_size"
-                    android:layout_width="200dp"
-                    android:layout_height="35dp"
-                    android:background="@null"
-                    android:text="@string/size"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"/>
+            <EditText
+                android:id="@+id/father_occupation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="15dp"
+                android:hint="Father's Occupation"
+                android:textColorHint="@color/hint_color"
+                android:textSize="14sp"
+                android:fontFamily="@font/bdclean"
+                android:background="@drawable/edittext_background"
+                android:layout_marginTop="15dp"
+                android:inputType="text"/>
 
-            </RelativeLayout>
+            <EditText
+                android:id="@+id/mother_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="15dp"
+                android:hint="Mother's Name"
+                android:textSize="14sp"
+                android:fontFamily="@font/bdclean"
+                android:background="@drawable/edittext_background"
+                android:textColorHint="@color/hint_color"
+                android:layout_marginTop="15dp"
+                android:inputType="textPersonName"/>
+
+
+            <EditText
+                android:id="@+id/mother_contact"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="15dp"
+                android:textColorHint="@color/hint_color"
+                android:hint="Mother's Contact Number"
+                android:textSize="14sp"
+                android:fontFamily="@font/bdclean"
+                android:background="@drawable/edittext_background"
+                android:layout_marginTop="15dp"
+                android:inputType="phone"/>
+
+            <EditText
+                android:id="@+id/mother_occupation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="15dp"
+                android:hint="@string/mother_s_occupation"
+                android:textSize="14sp"
+                android:fontFamily="@font/bdclean"
+                android:textColorHint="@color/hint_color"
+                android:background="@drawable/edittext_background"
+                android:layout_marginTop="15dp"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/number_of_brothers"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="15dp"
+                android:textColorHint="@color/hint_color"
+                android:hint="@string/total_number_of_brothers"
+                android:textSize="14sp"
+                android:fontFamily="@font/bdclean"
+                android:background="@drawable/edittext_background"
+                android:layout_marginTop="15dp"
+                android:inputType="phone"/>
+
+            <EditText
+                android:id="@+id/number_of_sister"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingHorizontal="15dp"
+                android:textColorHint="@color/hint_color"
+                android:hint="@string/total_number_of_sisters"
+                android:textSize="14sp"
+                android:fontFamily="@font/bdclean"
+                android:background="@drawable/edittext_background"
+                android:layout_marginTop="15dp"
+                android:inputType="phone"/>
 
 <!--fix end ===============================================================-->
             <RelativeLayout
@@ -835,6 +727,44 @@
                 android:orientation="vertical"
                 android:paddingBottom="20dp"
                 >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:padding="5dp"
+                    >
+                    <CheckBox android:id="@+id/checkbox_meat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                         />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Consent for Reference and Background Check"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/bdclean_bold"
+                            android:textSize="16sp"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/i_do_hereby_give_bd_clean_permission_to_inquire_into_my_personal_family_education_references_driving_record_employment_volunteer_history_or_police_record_i_further_give_permission_to_the_holder_of_any_such_records_to_release_the_same_to_bd_clean_i_hereby_hold_bd_clean_harmless_of_any_liability_whether_civil_or_criminal_that_may_arise_as_a_result_of_the_release_of_this_information_about_me_i_further_hold_harmless_any_individual_agency_business_or_corporation_that_provides_information_or_documents_to_bd_clean_i_understand_that_bd_clean_will_use_this_information_as_part_of_its_verification_of_my_volunteer_membership_application_i_further_understand_that_as_a_bd_clean_member_i_am_not_paid_for_my_services"
+                            android:fontFamily="@font/bdclean"
+                            android:textColor="@color/black"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/submitBtn"
@@ -850,7 +780,15 @@
 
         </LinearLayout>
 
-
     </ScrollView>
 
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/red" />
+
+</RelativeLayout>
