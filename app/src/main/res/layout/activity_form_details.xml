@@ -12,7 +12,7 @@
         android:id="@+id/custom_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="BD CLEAN Member From"
+        app:title="BD Clean Registration From"
         android:background="@color/green_2"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/all_field_are_required"
-        android:textSize="22sp"
+        android:textSize="16sp"
         android:background="@color/red"
         android:gravity="center"
         android:fontFamily="@font/bdclean"
@@ -46,6 +46,7 @@
             <EditText
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
                 android:layout_height="48dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="text"
@@ -63,6 +64,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="text"
+                android:backgroundTint="@color/white"
                 android:textColorHint="@color/hint_color"
                 android:fontFamily="@font/bdclean"
                 android:textColor="@color/black"
@@ -76,6 +78,7 @@
                 android:id="@+id/user_email"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:backgroundTint="@color/white"
                 android:background="@drawable/edittext_background"
                 android:inputType="textEmailAddress"
                 android:fontFamily="@font/bdclean"
@@ -92,6 +95,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="textPassword"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/bdclean"
                 android:textColorHint="@color/hint_color"
                 android:textColor="@color/black"
@@ -108,6 +112,7 @@
                 android:background="@drawable/edittext_background"
                 android:inputType="textPassword"
                 android:fontFamily="@font/bdclean"
+                android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:textColorHint="@color/hint_color"
                 android:hint="@string/confirm_password"
@@ -123,6 +128,8 @@
                 android:layout_marginTop="15dp"
                 android:text="@string/date_of_birth"
                 android:textColor="@color/bdclean_green"
+                android:textAllCaps="false"
+                android:textSize="16sp"
                 android:fontFamily="@font/bdclean_bold"
                 android:backgroundTint="@color/white"
                 android:background="@drawable/button_shape_1"/>
@@ -133,6 +140,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
                 android:gravity="center"
+                android:backgroundTint="@color/white"
                 android:layout_marginTop="15dp"
                 android:paddingHorizontal="15dp"
                 android:orientation="horizontal">
@@ -145,54 +153,36 @@
                     android:textSize="14sp"
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/bdclean"
-                    android:textColor="@color/text_color"/>
+                    android:textColor="@color/hint_color"/>
 
                 <Button
                     android:id="@+id/select_gender"
                     android:layout_width="200dp"
-                    android:background="@null"
-                    android:text="@string/choose_gender"
-                    android:textAllCaps="false"
+                    android:layout_height="35dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:textSize="12sp"
                     android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"
-                    android:layout_height="35dp"/>
+                    />
 
             </RelativeLayout>
 
-            <RelativeLayout
+            <EditText
+                android:id="@+id/select_occupation"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
                 android:background="@drawable/edittext_background"
-                android:gravity="center"
+                android:inputType="text"
+                android:fontFamily="@font/bdclean"
+                android:textColorHint="@color/hint_color"
                 android:layout_marginTop="15dp"
-                android:paddingHorizontal="15dp"
-                android:orientation="horizontal">
+                android:textColor="@color/black"
+                android:hint="@string/occupation"
+                android:textSize="14sp"
+                android:paddingStart="15dp"/>
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:textAllCaps="false"
-                    android:text="@string/choose_occupation"
-                    android:textSize="14sp"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="@font/bdclean"
-                    android:textColor="@color/text_color"/>
-
-                <Button
-                    android:id="@+id/select_occupation"
-                    android:layout_width="200dp"
-                    android:background="@null"
-                    android:text="@string/occupation"
-                    android:layout_alignParentEnd="true"
-                    android:textAllCaps="false"
-                    android:layout_centerVertical="true"
-                    android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"
-                    android:layout_height="35dp"/>
-
-            </RelativeLayout>
 
             <EditText
                 android:id="@+id/presentAddress"
@@ -200,6 +190,7 @@
                 android:layout_height="70dp"
                 android:background="@drawable/edittext_background"
                 android:inputType="text"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/bdclean"
                 android:textColor="@color/black"
                 android:hint="@string/present_address"
@@ -213,6 +204,7 @@
                 android:id="@+id/facebook_link"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:backgroundTint="@color/white"
                 android:background="@drawable/edittext_background"
                 android:inputType="text"
                 android:fontFamily="@font/bdclean"
@@ -226,6 +218,7 @@
             <EditText
                 android:id="@+id/nid_number"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
@@ -240,6 +233,7 @@
                 android:id="@+id/ll_1"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:backgroundTint="@color/white"
                 android:background="@drawable/edittext_background"
                 android:gravity="center"
                 android:layout_marginTop="15dp"
@@ -254,18 +248,18 @@
                     android:textSize="14sp"
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/bdclean"
-                    android:textColor="@color/text_color"/>
+                    android:textColor="@color/hint_color"/>
 
                 <Button
                     android:id="@+id/select_reference"
                     android:layout_width="200dp"
-                    android:background="@null"
-                    android:text="@string/reference_by"
+                    android:layout_height="35dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:textSize="12sp"
                     android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"
-                    android:layout_height="35dp"/>
+                    />
 
             </RelativeLayout>
 
@@ -275,6 +269,7 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext_background"
                 android:paddingHorizontal="15dp"
+                android:backgroundTint="@color/white"
                 android:orientation="horizontal">
 
                 <TextView
@@ -285,18 +280,18 @@
                     android:textSize="14sp"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:textColor="@color/text_color"/>
+                    android:textColor="@color/hint_color"/>
 
                 <Button
                     android:id="@+id/select_blood"
                     android:layout_width="200dp"
                     android:layout_height="35dp"
-                    android:background="@null"
-                    android:text="@string/blood_group"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:textSize="12sp"
                     android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"/>
+                    />
 
             </RelativeLayout>
 
@@ -306,6 +301,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:paddingHorizontal="15dp"
+                android:backgroundTint="@color/white"
                 android:textColorHint="@color/hint_color"
                 android:hint="@string/field_of_experience"
                 android:textSize="14sp"
@@ -319,6 +315,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:paddingHorizontal="15dp"
+                android:backgroundTint="@color/white"
                 android:hint="@string/years_of_experience"
                 android:textSize="14sp"
                 android:textColorHint="@color/hint_color"
@@ -334,12 +331,13 @@
                 android:orientation="horizontal"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:paddingHorizontal="15dp">
 
                 <TextView
                     android:layout_width="100dp"
                     android:text="@string/religion"
-                    android:textColor="@color/text_color"
+                    android:textColor="@color/hint_color"
                     android:textAllCaps="false"
                     android:layout_centerVertical="true"
                     android:layout_alignParentStart="true"
@@ -354,9 +352,9 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:background="@null"
-                    android:text="@string/select"
                     android:textSize="12sp"
-                    android:drawableEnd="@drawable/icon_dropdown"/>
+                    android:drawableEnd="@drawable/icon_dropdown"
+                    />
 
             </RelativeLayout>
 
@@ -365,6 +363,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:paddingHorizontal="15dp"
+                android:backgroundTint="@color/white"
                 android:background="@drawable/edittext_background"
                 android:orientation="horizontal">
 
@@ -377,18 +376,18 @@
                     android:layout_alignParentStart="true"
                     android:textSize="14sp"
                     android:fontFamily="@font/bdclean"
-                    android:textColor="@color/text_color"/>
+                    android:textColor="@color/hint_color"/>
 
                 <Button
                     android:id="@+id/select_shirt_size"
                     android:layout_width="200dp"
                     android:layout_height="35dp"
-                    android:background="@null"
-                    android:text="@string/size"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:textSize="12sp"
                     android:drawableEnd="@drawable/icon_dropdown"
-                    android:paddingHorizontal="20dp"/>
+                    />
 
             </RelativeLayout>
 
@@ -396,6 +395,7 @@
                 android:id="@+id/highest_education"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:backgroundTint="@color/white"
                 android:textColorHint="@color/hint_color"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
@@ -412,6 +412,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:hint="@string/exam_degree"
                 android:textSize="14sp"
                 android:fontFamily="@font/bdclean"
@@ -424,6 +425,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:textColorHint="@color/hint_color"
                 android:hint="@string/subject_major"
                 android:textSize="14sp"
@@ -437,6 +439,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:textColorHint="@color/hint_color"
                 android:hint="@string/university_board"
                 android:textSize="14sp"
@@ -455,6 +458,7 @@
                 android:hint="@string/educational_institute"
                 android:textSize="14sp"
                 android:fontFamily="@font/bdclean"
+                android:backgroundTint="@color/white"
                 android:paddingHorizontal="15dp"
                 android:inputType="text"/>
 
@@ -466,6 +470,7 @@
                 android:layout_marginTop="15dp"
                 android:textColorHint="@color/hint_color"
                 android:hint="@string/passing_year"
+                android:backgroundTint="@color/white"
                 android:textSize="14sp"
                 android:fontFamily="@font/bdclean"
                 android:paddingHorizontal="15dp"
@@ -479,6 +484,7 @@
                 android:layout_marginTop="15dp"
                 android:hint="@string/registration_no_roll_no"
                 android:textSize="14sp"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/bdclean"
                 android:textColorHint="@color/hint_color"
                 android:paddingHorizontal="15dp"
@@ -491,6 +497,7 @@
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
                 android:hint="@string/result"
+                android:backgroundTint="@color/white"
                 android:textSize="14sp"
                 android:fontFamily="@font/bdclean"
                 android:textColorHint="@color/hint_color"
@@ -505,6 +512,7 @@
                 android:layout_height="50dp"
                 android:paddingHorizontal="15dp"
                 android:hint="@string/father_s_name"
+                android:backgroundTint="@color/white"
                 android:textSize="14sp"
                 android:fontFamily="@font/bdclean"
                 android:textColorHint="@color/hint_color"
@@ -516,6 +524,7 @@
                 android:id="@+id/father_contact"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:backgroundTint="@color/white"
                 android:paddingHorizontal="15dp"
                 android:hint="@string/father_contact"
                 android:textColorHint="@color/hint_color"
@@ -530,6 +539,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:paddingHorizontal="15dp"
+                android:backgroundTint="@color/white"
                 android:hint="Father's Occupation"
                 android:textColorHint="@color/hint_color"
                 android:textSize="14sp"
@@ -545,6 +555,7 @@
                 android:paddingHorizontal="15dp"
                 android:hint="Mother's Name"
                 android:textSize="14sp"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/bdclean"
                 android:background="@drawable/edittext_background"
                 android:textColorHint="@color/hint_color"
@@ -563,12 +574,14 @@
                 android:fontFamily="@font/bdclean"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:inputType="phone"/>
 
             <EditText
                 android:id="@+id/mother_occupation"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:backgroundTint="@color/white"
                 android:paddingHorizontal="15dp"
                 android:hint="@string/mother_s_occupation"
                 android:textSize="14sp"
@@ -587,6 +600,7 @@
                 android:hint="@string/total_number_of_brothers"
                 android:textSize="14sp"
                 android:fontFamily="@font/bdclean"
+                android:backgroundTint="@color/white"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
                 android:inputType="phone"/>
@@ -594,6 +608,7 @@
             <EditText
                 android:id="@+id/number_of_sister"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
                 android:layout_height="50dp"
                 android:paddingHorizontal="15dp"
                 android:textColorHint="@color/hint_color"
@@ -611,12 +626,13 @@
                 android:orientation="horizontal"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:paddingHorizontal="15dp">
 
                 <TextView
                     android:layout_width="100dp"
                     android:text="@string/marital_status"
-                    android:textColor="@color/text_color"
+                    android:textColor="@color/hint_color"
                     android:textAllCaps="false"
                     android:layout_centerVertical="true"
                     android:layout_alignParentStart="true"
@@ -631,7 +647,6 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:background="@null"
-                    android:text="@string/select"
                     android:textSize="12sp"
                     android:drawableEnd="@drawable/icon_dropdown"/>
 
@@ -662,7 +677,7 @@
                 android:fontFamily="@font/bdclean"
                 android:background="@drawable/edittext_background"
                 android:layout_marginTop="15dp"
-                android:inputType="text"
+                android:inputType="phone"
                 android:visibility="gone"
                 />
 
@@ -696,7 +711,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/upload_profile_photo"
-                    android:textColor="@color/text_color"
+                    android:textColor="@color/hint_color"
                     android:textSize="16sp"
                     android:padding="10dp"
                     android:layout_alignParentStart="true"
@@ -731,16 +746,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:background="@color/white"
                     android:padding="5dp"
                     >
-                    <CheckBox android:id="@+id/checkbox_meat"
+
+                    <CheckBox
+                        android:layout_marginBottom="3dp"
+                        android:id="@+id/checkbox_meat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                         />
+                        android:buttonTint="@color/white"
+                        android:layout_gravity="start" />
 
                     <LinearLayout
+                        android:paddingTop="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -749,18 +767,10 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Consent for Reference and Background Check"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/bdclean_bold"
-                            android:textSize="16sp"
-                            />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/i_do_hereby_give_bd_clean_permission_to_inquire_into_my_personal_family_education_references_driving_record_employment_volunteer_history_or_police_record_i_further_give_permission_to_the_holder_of_any_such_records_to_release_the_same_to_bd_clean_i_hereby_hold_bd_clean_harmless_of_any_liability_whether_civil_or_criminal_that_may_arise_as_a_result_of_the_release_of_this_information_about_me_i_further_hold_harmless_any_individual_agency_business_or_corporation_that_provides_information_or_documents_to_bd_clean_i_understand_that_bd_clean_will_use_this_information_as_part_of_its_verification_of_my_volunteer_membership_application_i_further_understand_that_as_a_bd_clean_member_i_am_not_paid_for_my_services"
+                            android:text="@string/agree"
                             android:fontFamily="@font/bdclean"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
                             />
                     </LinearLayout>
 
@@ -768,10 +778,16 @@
 
                 <Button
                     android:id="@+id/submitBtn"
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
                     android:text="@string/submit"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/bdclean"
                     android:background="@drawable/login_btn"
                     />

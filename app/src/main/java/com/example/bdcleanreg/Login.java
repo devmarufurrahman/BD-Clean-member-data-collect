@@ -38,7 +38,7 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar;
 
     OtpTextView otpTextView;
-    public String position_id="0", dept_level="0", pos_name = "Deputy Coordinator IT & Media";
+    public String position_id, dept_level, pos_name = "Head of Logistic";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

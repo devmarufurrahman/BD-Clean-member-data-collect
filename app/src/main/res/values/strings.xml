@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Deputy Coordinator IT Media</string>
+    <string name="app_name">Head of Logistic</string>
     <string name="mobile_number">Mobile Number</string>
     <string name="password">Password</string>
     <string name="log_in">Log in</string>
@@ -434,9 +434,9 @@
     <string name="passing_year">Passing Year</string>
     <string name="registration_no_roll_no">Registration No./Roll No.</string>
     <string name="result">Result</string>
-    <string name="facebook_id">Facebook ID</string>
+    <string name="facebook_id">Facebook ID (www.facebook.com/example)</string>
     <string name="all_field_are_required">All field are required!!</string>
     <string name="marital_status">Marital Status</string>
     <string name="spouse_contact">Spouse Contact</string>
-    <string name="i_do_hereby_give_bd_clean_permission_to_inquire_into_my_personal_family_education_references_driving_record_employment_volunteer_history_or_police_record_i_further_give_permission_to_the_holder_of_any_such_records_to_release_the_same_to_bd_clean_i_hereby_hold_bd_clean_harmless_of_any_liability_whether_civil_or_criminal_that_may_arise_as_a_result_of_the_release_of_this_information_about_me_i_further_hold_harmless_any_individual_agency_business_or_corporation_that_provides_information_or_documents_to_bd_clean_i_understand_that_bd_clean_will_use_this_information_as_part_of_its_verification_of_my_volunteer_membership_application_i_further_understand_that_as_a_bd_clean_member_i_am_not_paid_for_my_services">I do hereby give BD Clean permission to inquire into my personal, family, education, references, driving record, employment, volunteer history, or police record. I further give permission to the holder of any such records to release the same to BD CLEAN. I hereby hold BD CLEAN harmless of any liability, whether civil or criminal, that may arise as a result of the release of this information about me. I further hold harmless any individual, agency, business, or corporation that provides information or documents to BD CLEAN. I understand that BD CLEAN will use this information as part of its verification of my volunteer membership application. I further understand that as a BD Clean member, I am not paid for my services.</string>
+    <string name="agree">I hereby, declare that the information stated above is correct to the best of my concern.</string>
 </resources>

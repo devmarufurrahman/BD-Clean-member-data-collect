@@ -124,27 +124,33 @@ public class LocationActivity extends AppCompatActivity {
             ll2.setVisibility(View.GONE);
             ll3.setVisibility(View.GONE);
             create_member.setVisibility(View.GONE);
-            progressBar.setVisibility(View.VISIBLE);
 
 
-            Intent ii = new Intent(LocationActivity.this, FormDetails.class);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    progressBar.setVisibility(View.VISIBLE);
+                    Intent ii = new Intent(LocationActivity.this, FormDetails.class);
 
-            ii.putExtra("position_id",position_id);
-            ii.putExtra("pos_name",pos_name);
-            ii.putExtra("dept_level",dept_level);
-            ii.putExtra("contact", contact);
+                    ii.putExtra("position_id",position_id);
+                    ii.putExtra("pos_name",pos_name);
+                    ii.putExtra("dept_level",dept_level);
+                    ii.putExtra("contact", contact);
 
-            startActivity(ii);
-            finish();
+                    startActivity(ii);
+                    finish();
+                }
+            },100);
+
+            progressBar.setVisibility(View.GONE);
+
         } else if (pos_name.equals("Divisional Coordinator") || pos_name.equals("Additional IT & Media") || pos_name.equals("Additional Logistic")) {
 
             ll2.setVisibility(View.GONE);
             ll3.setVisibility(View.GONE);
-            progressBar.setVisibility(View.VISIBLE);
         } else if (pos_name.equals("Additional Coordinator") || pos_name.equals("District Coordinator") || pos_name.equals("Deputy Coordinator Logistic") || pos_name.equals("Deputy Coordinator IT & Media")) {
 
             ll3.setVisibility(View.GONE);
-            progressBar.setVisibility(View.VISIBLE);
         }
 
 

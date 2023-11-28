@@ -62,8 +62,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class FormDetails extends AppCompatActivity  implements DatePickerDialog.OnDateSetListener{
 
 
-    EditText user_name,user_name_bn,password, spouse_contact, user_email,confirm_password,presentAddress,facebook_link,nid_number,father_name,father_contact,father_occupation,mother_name,mother_contact,mother_occupation,number_of_brothers,number_of_sister,field_of_experience,years_of_experience,spouse_name,num_of_sons,highest_education,exam_degree,subject_major,university_board,education_institute,pass_year,registation_roll,result;
-    Button select_t_shirt,marital_status, select_religion, select_blood, select_reference, select_gender, date_birth, submitBtn ,marital_spinner, select_occupation;
+    EditText user_name,user_name_bn,password, spouse_contact, user_email,confirm_password,presentAddress,facebook_link,nid_number,father_name, select_occupation,father_contact,father_occupation,mother_name,mother_contact,mother_occupation,number_of_brothers,number_of_sister,field_of_experience,years_of_experience,spouse_name,num_of_sons,highest_education,exam_degree,subject_major,university_board,education_institute,pass_year,registation_roll,result;
+    Button select_t_shirt,marital_status, select_religion, select_blood, select_reference, select_gender, date_birth, submitBtn ,marital_spinner;
     CircleImageView select_photo;
     int day, month, year, division_ref, district_ref, upazila_ref, union_ref, village_ref, parent_ref;
     int myday, myMonth, myYear;
@@ -135,11 +135,14 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         union_ref = intent.getIntExtra("union_ref",0);
         village_ref = intent.getIntExtra("village_ref",0);
 
+        Log.d("Form Details input", "village_ref: " + village_ref+", union_ref: "+union_ref+", upazila_ref: "+ upazila_ref+", district_ref: "+district_ref+"division_ref: " + division_ref+", contact: "+contact+", dept_level: "+ dept_level+", position_id: "+position_id+",  pos_name: "+ pos_name);
+
         getParentData(dept_level, division_ref, district_ref, upazila_ref, village_ref);
 
         date_birth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                date_birth.setError(null);
                 Calendar calendar = Calendar.getInstance();
                 year = calendar.get(Calendar.YEAR);
                 month = calendar.get(Calendar.MONTH);
@@ -149,91 +152,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
             }
         });
 
-        occupation = new ArrayList<>();
-        occupation.add("Student");
-        occupation.add("Farmer");
-        occupation.add("Businessman");
-        occupation.add("Service Holder (Govt.)");
-        occupation.add("Service Holder (Private Company)");
-        occupation.add("Enterpreneur");
-        occupation.add("Home Maker");
-        occupation.add("Social Worker");
-        occupation.add("Technical Worker");
-        occupation.add("Other");
-        select_occupation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog = new Dialog(FormDetails.this);
-                dialog.setContentView(R.layout.custom_spinner_layout_2);
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog.show();
 
-                ListView listView=dialog.findViewById(R.id.list_view);
-                ArrayAdapter<String> adapter=new ArrayAdapter<>(FormDetails.this, android.R.layout.simple_list_item_1,occupation);
-                listView.setAdapter(adapter);
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        // when item selected from list
-                        // set selected item on textView
-                        String item  = adapter.getItem(position);
-                        switch (item){
-                            case "Farmer" :
-                                occupation_ref = 2;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Businessman" :
-                                occupation_ref = 3;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Service Holder (Govt.)" :
-                                occupation_ref = 4;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Service Holder (Private Company)" :
-                                occupation_ref = 5;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Enterpreneur" :
-                                occupation_ref = 6;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Home Maker" :
-                                occupation_ref = 7;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Social Worker" :
-                                occupation_ref = 8;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Technical Worker" :
-                                occupation_ref = 9;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Other" :
-                                occupation_ref = 10;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                            case "Student" :
-                                occupation_ref = 1;
-                                select_occupation.setText(item);
-                                dialog.dismiss();
-                                break;
-                        }
-                    }
-                });
-            }
-        });
 
         gender=new ArrayList<>();
         gender.add("Male");
@@ -261,11 +180,13 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
                             case "Male" :
                                 gender_ref = 1;
                                 select_gender.setText(item);
+                                select_gender.setError(null);
                                 dialog.dismiss();
                                 break;
                             case "Female" :
                                 gender_ref = 2;
                                 select_gender.setText(item);
+                                select_gender.setError(null);
                                 dialog.dismiss();
                                 break;
                         }
@@ -281,10 +202,13 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         marital_status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 dialog = new Dialog(FormDetails.this);
                 dialog.setContentView(R.layout.custom_spinner_layout_2);
                 Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 dialog.show();
+                marital_status.setError(null);
+
 
                 ListView listView=dialog.findViewById(R.id.list_view);
                 ArrayAdapter<String> adapter=new ArrayAdapter<>(FormDetails.this, android.R.layout.simple_list_item_1,marital);
@@ -328,6 +252,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         select_reference.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                select_reference.setError(null);
                 dialog = new Dialog(FormDetails.this);
                 dialog.setContentView(R.layout.custom_spinner_layout_2);
                 Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -384,6 +309,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         select_blood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                select_blood.setError(null);
                 dialog = new Dialog(FormDetails.this);
                 dialog.setContentView(R.layout.custom_spinner_layout_2);
                 Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -415,6 +341,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         select_religion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                select_religion.setError(null);
                 dialog = new Dialog(FormDetails.this);
                 dialog.setContentView(R.layout.custom_spinner_layout_2);
                 Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -467,6 +394,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         select_t_shirt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                select_t_shirt.setError(null);
                 dialog = new Dialog(FormDetails.this);
                 dialog.setContentView(R.layout.custom_spinner_layout_2);
                 Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -565,6 +493,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         String facebookId = facebook_link.getText().toString().trim();
         String nidNumber = nid_number.getText().toString().trim();
         String fatherName = father_name.getText().toString().trim();
+        String occupation_ref = select_occupation.getText().toString().trim();
         String fatherContact = father_contact.getText().toString().trim();
         String fatherOccupation = father_occupation.getText().toString().trim();
         String motherName = mother_name.getText().toString().trim();
@@ -597,8 +526,8 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         } else if (email.equals("") || !isValid) {
             user_email.setError("Give a valid email");
             submitToast();
-        } else if (passwordGet.equals("")) {
-            password.setError("Give password");
+        } else if (passwordGet.equals("") || passwordGet.length()<4) {
+            password.setError("password min 4 char");
             submitToast();
         } else if (confirmPassword.equals("")) {
             confirm_password.setError("Confirm password");
@@ -613,14 +542,17 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         } else if (gender_ref == 0) {
             select_gender.setError("Select gender");
             submitToast();
+        } else if (occupation_ref.equals("")) {
+            select_occupation.setError("Input Occupation");
+            submitToast();
         } else if (present_address.equals("")) {
             presentAddress.setError("Give present address");
             submitToast();
         } else if (facebookId.equals("")) {
             facebook_link.setError("Give facebook id");
             submitToast();
-        } else if (nidNumber.equals("")) {
-            nid_number.setError("Give nid/birth certificate number");
+        } else if (nidNumber.equals("") || nidNumber.length()<8) {
+            nid_number.setError("Input a valid ID Number");
             submitToast();
         } else if (fatherName.equals("")) {
             father_name.setError("Give Father's name");
