@@ -140,7 +140,7 @@ public class LocationActivity extends AppCompatActivity {
                     startActivity(ii);
                     finish();
                 }
-            },100);
+            },500);
 
             progressBar.setVisibility(View.GONE);
 
@@ -375,12 +375,12 @@ public class LocationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (division_ref == 0 && (pos_name.equals("Divisional Coordinator") || pos_name.equals("Additional IT & Media") || pos_name.equals("Additional Logistic"))){
+                if (division_ref == 0 && (pos_name.equals("Divisional Coordinator") || pos_name.equals("Divisional Sub Coordinator")  || pos_name.equals("Additional IT & Media") || pos_name.equals("Additional Logistic"))){
                     select_division.setError("Select Division");
-                } else if (district_ref == 0 && (pos_name.equals("Additional Coordinator") || pos_name.equals("District Coordinator") || pos_name.equals("Deputy Coordinator Logistic") || pos_name.equals("Deputy Coordinator IT & Media"))) {
+                } else if (district_ref == 0 && (pos_name.equals("Additional Coordinator") || pos_name.equals("District Sub Coordinator")  || pos_name.equals("District Coordinator") || pos_name.equals("Deputy Coordinator Logistic") || pos_name.equals("Deputy Coordinator IT & Media"))) {
                     select_district.setError("Select District");
                 }
-                else if (upazila_ref == 0 && (pos_name.equals("Upazila Coordinator"))) {
+                else if (upazila_ref == 0 && (pos_name.equals("Upazila Coordinator") || pos_name.equals("Upazilla Sub Coordinator"))) {
                     select_upazilla.setError("Select Upazila / Ward");
                 }
                 else {

@@ -62,7 +62,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class FormDetails extends AppCompatActivity  implements DatePickerDialog.OnDateSetListener{
 
 
-    EditText user_name,user_name_bn,password, spouse_contact, user_email,confirm_password,presentAddress,facebook_link,nid_number,father_name,father_contact,father_occupation,mother_name,mother_contact,mother_occupation,number_of_brothers,number_of_sister,field_of_experience,years_of_experience,spouse_name,num_of_sons,highest_education,exam_degree,subject_major,university_board,education_institute,pass_year,registation_roll,result;
+    EditText user_name,legal_guardian_name,legal_guardian_contact,legal_guardian_occupation, user_name_bn,password, spouse_contact, user_email,confirm_password,presentAddress,facebook_link,nid_number,father_name,father_contact,father_occupation,mother_name,mother_contact,mother_occupation,number_of_brothers,number_of_sister,field_of_experience,years_of_experience,spouse_name,num_of_sons,highest_education,exam_degree,subject_major,university_board,education_institute,pass_year,registation_roll,result;
     Button select_t_shirt,marital_status, select_religion, select_blood, select_reference, select_gender, date_birth, submitBtn, select_occupation;
     CircleImageView select_photo;
     int day, month, year, division_ref, district_ref, upazila_ref, union_ref, village_ref, parent_ref;
@@ -120,6 +120,9 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         select_photo = findViewById(R.id.member_photo);
         spouse_contact = findViewById(R.id.spouse_contact);
         select_occupation = findViewById(R.id.select_occupation);
+        legal_guardian_contact = findViewById(R.id.legal_guardian_contact);
+        legal_guardian_name = findViewById(R.id.legal_guardian_name);
+        legal_guardian_occupation = findViewById(R.id.legal_guardian_occupation);
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.GONE);
 
@@ -157,6 +160,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         gender=new ArrayList<>();
         gender.add("Male");
         gender.add("Female");
+        gender.add("Other");
 
         select_gender.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,6 +193,12 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
                                 select_gender.setError(null);
                                 dialog.dismiss();
                                 break;
+                            case "Other" :
+                                gender_ref = 3;
+                                select_gender.setText(item);
+                                select_gender.setError(null);
+                                dialog.dismiss();
+                                break;
                         }
                     }
                 });
@@ -202,11 +212,23 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         occupation.add("Farmer");
         occupation.add("Businessman");
         occupation.add("Service Holder (Govt.)");
-        occupation.add("Service Holder (Private Company)");
+        occupation.add("Service Holder (Private)");
         occupation.add("Enterpreneur");
         occupation.add("Home Maker");
         occupation.add("Social Worker");
         occupation.add("Technical Worker");
+        occupation.add("Digital Creator");
+        occupation.add("Freelancer");
+        occupation.add("Actor");
+        occupation.add("Journalist");
+        occupation.add("Advocate");
+        occupation.add("Teacher");
+        occupation.add("Doctor");
+        occupation.add("Singer");
+        occupation.add("Player");
+        occupation.add("Plumber");
+        occupation.add("Electrician");
+        occupation.add("Driver");
         occupation.add("Other");
         select_occupation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -245,7 +267,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
                                 select_occupation.setText(item);
                                 dialog.dismiss();
                                 break;
-                            case "Service Holder (Private Company)" :
+                            case "Service Holder (Private)" :
                                 occupation_ref = 5;
                                 select_occupation.setText(item);
                                 dialog.dismiss();
@@ -280,6 +302,66 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
                                 select_occupation.setText(item);
                                 dialog.dismiss();
                                 break;
+                            case "Digital Creator" :
+                                occupation_ref = 11;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Freelancer" :
+                                occupation_ref = 12;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Actor" :
+                                occupation_ref = 13;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Journalist" :
+                                occupation_ref = 14;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Advocate" :
+                                occupation_ref = 15;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Teacher" :
+                                occupation_ref = 16;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Doctor" :
+                                occupation_ref = 17;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Singer" :
+                                occupation_ref = 18;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Player" :
+                                occupation_ref = 19;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Plumber" :
+                                occupation_ref = 20;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Electrician" :
+                                occupation_ref = 21;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Driver" :
+                                occupation_ref = 22;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
                         }
                     }
                 });
@@ -291,8 +373,9 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
 
 
         marital=new ArrayList<>();
+        marital.add("Single");
         marital.add("Married");
-        marital.add("Unmarried");
+        marital.add("Other");
 
         marital_status.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -316,16 +399,24 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
                         // set selected item on textView
                         String item  = adapter.getItem(position);
                         switch (Objects.requireNonNull(item)){
-                            case "Married" :
+                            case "Single" :
                                 marital_ref = 1;
+                                marital_status.setText(item);
+                                dialog.dismiss();
+                                spouse_name.setVisibility(View.GONE);
+                                num_of_sons.setVisibility(View.GONE);
+                                spouse_contact.setVisibility(View.GONE);
+                                break;
+                            case "Married" :
+                                marital_ref = 2;
                                 marital_status.setText(item);
                                 dialog.dismiss();
                                 spouse_name.setVisibility(View.VISIBLE);
                                 num_of_sons.setVisibility(View.VISIBLE);
                                 spouse_contact.setVisibility(View.VISIBLE);
                                 break;
-                            case "Unmarried" :
-                                marital_ref = 2;
+                            case "Other" :
+                                marital_ref = 3;
                                 marital_status.setText(item);
                                 dialog.dismiss();
                                 spouse_name.setVisibility(View.GONE);
@@ -614,6 +705,9 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         String passingYear = pass_year.getText().toString().trim();
         String registrationNo = registation_roll.getText().toString().trim();
         String resultGet = result.getText().toString().trim();
+        String legalContact = legal_guardian_contact.getText().toString().trim();
+        String legalName = legal_guardian_name.getText().toString().trim();
+        String legalOccupation = legal_guardian_occupation.getText().toString().trim();
 
         boolean isValid = isValidEmail(email);
 
@@ -657,20 +751,8 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         } else if (fatherName.equals("")) {
             father_name.setError("Give Father's name");
             submitToast();
-        } else if (fatherContact.equals("") || fatherContact.length() != 11) {
-            father_contact.setError("Input a valid contact");
-            submitToast();
-        } else if (fatherOccupation.equals("")) {
-            father_occupation.setError("Input father occupation");
-            submitToast();
         } else if (motherName.equals("")) {
             mother_name.setError("Input mother name");
-            submitToast();
-        } else if (motherContact.equals("") || motherContact.length() != 11) {
-            mother_contact.setError("Input a valid contact");
-            submitToast();
-        } else if (motherOccupation.equals("")) {
-            mother_occupation.setError("Input mother occupation");
             submitToast();
         } else if (totalBrothers.equals("")) {
             number_of_brothers.setError("Input total brothers");
@@ -723,10 +805,18 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         } else if (size.equals("")) {
             select_t_shirt.setError("Input t shirt size");
             submitToast();
+        } else if (legalName.equals("")){
+           legal_guardian_name.setError("Input Guardian Name");
+            submitToast();
+        }  else if (legalContact.equals("")){
+           legal_guardian_contact.setError("Input Guardian Contact");
+            submitToast();
+        }  else if (legalOccupation.equals("")){
+           legal_guardian_occupation.setError("Input Guardian Occupation");
+            submitToast();
         } else if (encodedImage.equals("")){
             submitDialog("Please select a profile photo",R.drawable.warning_image,R.color.red);
             submitToast();
-
         } else {
 
             //Toast.makeText(FormDetails.this, "Submited", Toast.LENGTH_SHORT).show();

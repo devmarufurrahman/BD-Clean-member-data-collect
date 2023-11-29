@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar;
 
     OtpTextView otpTextView;
-    public String position_id, dept_level, pos_name = "Divisional Sub Coordinator";
+    public String position_id, dept_level, pos_name = "Upazilla Sub Coordinator";
     TextView toast_message;
 
     @Override
@@ -117,8 +117,8 @@ public class Login extends AppCompatActivity {
 
         Date currentDate = new Date();
 
-        // Given date and time: 1 November 2023, 11:00 AM
-        String givenDateString = "2023-12-01 11:00:00";
+        // Given date and time: 1 November 2023, 23:59 PM
+        String givenDateString = "2023-12-01 23:59:00";
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date givenDate = null;
         try {
@@ -149,6 +149,8 @@ public class Login extends AppCompatActivity {
                     String final_contact = "88"+contact;
 
                 progressBar.setVisibility(View.GONE);
+
+
 //                Intent intent = new Intent(Login.this, LocationActivity.class);
 //                intent.putExtra("pos_name",pos_name);
 //                intent.putExtra("position_id",position_id);
