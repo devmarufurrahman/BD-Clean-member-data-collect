@@ -41,8 +41,8 @@
 
             <ImageView
                 android:id="@+id/submitImgDialog"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 />
 
@@ -53,8 +53,8 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_marginVertical="20dp"
+                android:paddingHorizontal="10dp"
                 android:fontFamily="@font/bdclean_bold"
-                android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 

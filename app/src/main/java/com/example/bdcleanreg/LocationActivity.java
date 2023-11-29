@@ -144,11 +144,11 @@ public class LocationActivity extends AppCompatActivity {
 
             progressBar.setVisibility(View.GONE);
 
-        } else if (pos_name.equals("Divisional Coordinator") || pos_name.equals("Additional IT & Media") || pos_name.equals("Additional Logistic")) {
+        } else if (pos_name.equals("Divisional Coordinator") || pos_name.equals("Divisional Sub Coordinator") || pos_name.equals("Additional IT & Media") || pos_name.equals("Additional Logistic")) {
 
             ll2.setVisibility(View.GONE);
             ll3.setVisibility(View.GONE);
-        } else if (pos_name.equals("Additional Coordinator") || pos_name.equals("District Coordinator") || pos_name.equals("Deputy Coordinator Logistic") || pos_name.equals("Deputy Coordinator IT & Media")) {
+        } else if (pos_name.equals("Additional Coordinator") || pos_name.equals("District Coordinator") || pos_name.equals("District Sub Coordinator") || pos_name.equals("Deputy Coordinator Logistic") || pos_name.equals("Deputy Coordinator IT & Media")) {
 
             ll3.setVisibility(View.GONE);
         }
@@ -185,7 +185,7 @@ public class LocationActivity extends AppCompatActivity {
                                     select_division.setText(jsonObject.getString("name"));
                                     dialog.dismiss();
 
-                                    if (pos_name.equals("Divisional Coordinator") || pos_name.equals("Additional IT & Media") || pos_name.equals("Additional Logistic")) {
+                                    if (pos_name.equals("Divisional Coordinator") || pos_name.equals("Divisional Sub Coordinator") || pos_name.equals("Additional IT & Media") || pos_name.equals("Additional Logistic")) {
                                         location_type_layout.setVisibility(View.GONE);
                                     } else {
 

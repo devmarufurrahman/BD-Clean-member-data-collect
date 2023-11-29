@@ -62,8 +62,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class FormDetails extends AppCompatActivity  implements DatePickerDialog.OnDateSetListener{
 
 
-    EditText user_name,user_name_bn,password, spouse_contact, user_email,confirm_password,presentAddress,facebook_link,nid_number,father_name, select_occupation,father_contact,father_occupation,mother_name,mother_contact,mother_occupation,number_of_brothers,number_of_sister,field_of_experience,years_of_experience,spouse_name,num_of_sons,highest_education,exam_degree,subject_major,university_board,education_institute,pass_year,registation_roll,result;
-    Button select_t_shirt,marital_status, select_religion, select_blood, select_reference, select_gender, date_birth, submitBtn ,marital_spinner;
+    EditText user_name,user_name_bn,password, spouse_contact, user_email,confirm_password,presentAddress,facebook_link,nid_number,father_name,father_contact,father_occupation,mother_name,mother_contact,mother_occupation,number_of_brothers,number_of_sister,field_of_experience,years_of_experience,spouse_name,num_of_sons,highest_education,exam_degree,subject_major,university_board,education_institute,pass_year,registation_roll,result;
+    Button select_t_shirt,marital_status, select_religion, select_blood, select_reference, select_gender, date_birth, submitBtn, select_occupation;
     CircleImageView select_photo;
     int day, month, year, division_ref, district_ref, upazila_ref, union_ref, village_ref, parent_ref;
     int myday, myMonth, myYear;
@@ -194,6 +194,101 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
                 });
             }
         });
+
+
+        // occupation
+        occupation = new ArrayList<>();
+        occupation.add("Student");
+        occupation.add("Farmer");
+        occupation.add("Businessman");
+        occupation.add("Service Holder (Govt.)");
+        occupation.add("Service Holder (Private Company)");
+        occupation.add("Enterpreneur");
+        occupation.add("Home Maker");
+        occupation.add("Social Worker");
+        occupation.add("Technical Worker");
+        occupation.add("Other");
+        select_occupation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                select_occupation.setError(null);
+
+
+                dialog = new Dialog(FormDetails.this);
+                dialog.setContentView(R.layout.custom_spinner_layout_2);
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.show();
+
+                ListView listView=dialog.findViewById(R.id.list_view);
+                ArrayAdapter<String> adapter=new ArrayAdapter<>(FormDetails.this, android.R.layout.simple_list_item_1,occupation);
+                listView.setAdapter(adapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        // when item selected from list
+                        // set selected item on textView
+                        String item  = adapter.getItem(position);
+                        switch (item){
+                            case "Farmer" :
+                                occupation_ref = 2;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Businessman" :
+                                occupation_ref = 3;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Service Holder (Govt.)" :
+                                occupation_ref = 4;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Service Holder (Private Company)" :
+                                occupation_ref = 5;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Enterpreneur" :
+                                occupation_ref = 6;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Home Maker" :
+                                occupation_ref = 7;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Social Worker" :
+                                occupation_ref = 8;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Technical Worker" :
+                                occupation_ref = 9;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Other" :
+                                occupation_ref = 10;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Student" :
+                                occupation_ref = 1;
+                                select_occupation.setText(item);
+                                dialog.dismiss();
+                                break;
+                        }
+                    }
+                });
+            }
+        });
+
+
+
+
 
         marital=new ArrayList<>();
         marital.add("Married");
@@ -334,9 +429,10 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
 
         religion=new ArrayList<>();
         religion.add("Islam");
-        religion.add("Hindu");
-        religion.add("Christian");
-        religion.add("Buddha");
+        religion.add("Hinduism");
+        religion.add("Christianity");
+        religion.add("Buddhism");
+        religion.add("Other");
 
         select_religion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -363,18 +459,23 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
                                 select_religion.setText(item);
                                 dialog.dismiss();
                                 break;
-                            case "Hindu" :
+                            case "Hinduism" :
                                 religion_ref = 2;
                                 select_religion.setText(item);
                                 dialog.dismiss();
                                 break;
-                            case "Christian" :
+                            case "Christianity" :
                                 religion_ref = 3;
                                 select_religion.setText(item);
                                 dialog.dismiss();
                                 break;
-                            case "Buddha" :
+                            case "Buddhism" :
                                 religion_ref = 4;
+                                select_religion.setText(item);
+                                dialog.dismiss();
+                                break;
+                            case "Other" :
+                                religion_ref = 5;
                                 select_religion.setText(item);
                                 dialog.dismiss();
                                 break;
@@ -477,7 +578,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
             @Override
             public void onClick(View v) {
                 submitData();
-                Toast.makeText(FormDetails.this, "Pressed", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -493,7 +594,6 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         String facebookId = facebook_link.getText().toString().trim();
         String nidNumber = nid_number.getText().toString().trim();
         String fatherName = father_name.getText().toString().trim();
-        String occupation_ref = select_occupation.getText().toString().trim();
         String fatherContact = father_contact.getText().toString().trim();
         String fatherOccupation = father_occupation.getText().toString().trim();
         String motherName = mother_name.getText().toString().trim();
@@ -542,7 +642,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
         } else if (gender_ref == 0) {
             select_gender.setError("Select gender");
             submitToast();
-        } else if (occupation_ref.equals("")) {
+        } else if (occupation_ref == 0) {
             select_occupation.setError("Input Occupation");
             submitToast();
         } else if (present_address.equals("")) {
@@ -594,7 +694,7 @@ public class FormDetails extends AppCompatActivity  implements DatePickerDialog.
             select_religion.setError("Select religion");
             submitToast();
         } else if (marital_ref == 0) {
-            marital_spinner.setError("Select marital");
+            marital_status.setError("Select Marital Status");
             submitToast();
         } else if (highestEducation.equals("")) {
             highest_education.setError("Input highestEducation");
